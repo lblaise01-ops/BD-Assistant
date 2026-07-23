@@ -1,0 +1,23 @@
+{
+    "id": "4as-02",
+    "serie": "4as",
+    "numero": "02",
+    "titre": "Les 4 As et l'aéroglisseur",
+
+    "editions": [
+        {
+            "type": "EO",
+            "dateEdition": "01/1964",
+            "valeurMin": 30,
+            "valeurMax": 50,
+            "criteres": [
+                "Dernier titre : Les 4 As et l'aéroglisseur",
+                "Pas de dépôt légal",
+                "Pas d'ISBN",
+                "47 planches"
+            ]
+        }
+    ],
+
+    "collection": []
+}

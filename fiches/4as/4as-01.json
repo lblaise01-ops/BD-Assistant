@@ -1,0 +1,21 @@
+{
+    "id": "4as-01",
+    "serie": "4as",
+    "numero": "01",
+    "titre": "Les 4 As et le serpent de mer",
+
+    "editions": [
+        {
+            "type": "EO",
+            "dateEdition": "01/1964",
+            "valeurMin": 30,
+            "valeurMax": 50,
+            "criteres": [
+                "Dernier titre : Les 4 As et l'aéroglisseur",
+                "Pas de dépôt légal"
+            ]
+        }
+    ],
+
+    "collection": [ ]
+}

@@ -1,0 +1,228 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f2f2f2;
+    color:#222;
+}
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+#lettres{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px;
+    padding:10px;
+    background:white;
+    border-bottom:1px solid #ccc;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+#lettres button{
+
+    width:34px;
+    height:34px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#3498db;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+#lettres button:hover{
+    background:#217dbb;
+}
+
+#lettres button.actif{
+    background:#2c3e50;
+}
+
+#contenu{
+    padding:12px;
+}
+
+.serie{
+
+    background:white;
+
+    margin-bottom:8px;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    box-shadow:0 2px 4px rgba(0,0,0,.12);
+
+}
+
+.serie:hover{
+    background:#ecf0f1;
+}
+
+.album{
+
+    background:white;
+
+    margin-bottom:15px;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    box-shadow:0 2px 4px rgba(0,0,0,.12);
+
+}
+
+.album h2{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+.edition{
+
+    border-left:4px solid #3498db;
+
+    padding-left:10px;
+
+    margin-top:8px;
+
+    margin-bottom:8px;
+
+}
+
+.edition.eo{
+
+    border-left-color:#f39c12;
+
+}
+
+.critere{
+
+    color:#555;
+
+    margin-top:4px;
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+   EO manquante
+========================================== */
+
+.badge-eo.eo-manquante{
+
+    background:#d8f5c8;
+
+    border:1px solid #7cc36b;
+
+    color:#222;
+
+}
+
+
+/* ==========================================
+   Badge EO
+========================================== */
+
+.badge-eo{
+
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+
+    padding:4px 10px;
+
+    border-radius:20px;
+
+    background:#f3f3f3;
+
+    font-weight:bold;
+
+    margin-right:10px;
+
+}
+
+/* Etoile */
+
+.etoile{
+
+    color:#FFD700;
+
+    font-size:18px;
+
+    line-height:1;
+
+}
+
+/* ==========================================
+   Ligne édition
+========================================== */
+
+.ligne-edition{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.badge-eo{
+
+    width:95px;
+
+    flex-shrink:0;
+
+}
+
+.date-edition{
+
+    width:110px;
+
+    flex-shrink:0;
+
+    font-weight:500;
+
+}
+
+.cote-edition{
+
+    margin-left:auto;
+
+    font-weight:bold;
+
+    color:#2c3e50;
+
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BD Assistant">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <title>BD Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>BD Assistant</h1>
+    </header>
+
+    <nav id="lettres"></nav>
+
+    <main id="contenu"></main>
+
+    <!-- Données -->
+    
+
+    <script src="app.js"></script>
+
+    <script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+            .then(reg => console.log("Service Worker enregistré", reg))
+            .catch(err => console.error("Erreur Service Worker :", err));
+    });
+}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+    "id": "4as-03",
+    "serie": "4as",
+    "numero": "03",
+    "titre": "Les 4 As et la vache sacrée",
+
+    "editions": [
+        {
+            "type": "EO",
+            "dateEdition": "01/1964",
+            "valeurMin": 30,
+            "valeurMax": 50,
+            "criteres": [
+                "Dernier titre 4e plat : Les 4 As et la vache sacrée",
+                "Pas d'ISBN",
+                "46 planches"
+            ]
+        }
+    ],
+
+    "collection": []
+}
