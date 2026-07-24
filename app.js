@@ -111,7 +111,7 @@ for (const fichier of fichiersAlbums) {
 
         } catch (e) {
 
-            console.warn(`Fiche absente : ${album.id}`);
+            console.error(`Erreur pour ${album.id} :`, e);
 
         }
 
