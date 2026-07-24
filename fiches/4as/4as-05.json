@@ -1,0 +1,22 @@
+{
+    "id": "4as-05",
+    "serie": "4as",
+    "numero": "05",
+    "titre": "Les 4 As et le couroucou",
+
+    "editions": [
+        {
+            "type": "EO",
+            "dateEdition": "01/1966",
+            "valeurMin": 20,
+            "valeurMax": 25,
+            "criteres": [
+                "Dernier titre 4e plat : Les 4 As et le couroucou",
+                "Pas d'ISBN",
+                "46 planches"
+            ]
+        }
+    ],
+
+    "collection": []
+}
