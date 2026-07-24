@@ -63,8 +63,22 @@ git push
 
 echo.
 echo =====================================
-echo        PUBLICATION TERMINEE
+echo     PUBLICATION EN COURS...
 echo =====================================
+echo.
+
+echo Attente de la mise a jour de GitHub Pages...
+timeout /t 20 /nobreak >nul
+
+start https://lblaise01-ops.github.io/BD-Assistant/
+
+echo.
+echo =====================================
+echo      PUBLICATION TERMINEE
+echo =====================================
+echo.
+echo Le site GitHub Pages a ete ouvert.
+echo Tu peux maintenant actualiser la page sur ton iPhone.
 echo.
 pause
 goto MENU
