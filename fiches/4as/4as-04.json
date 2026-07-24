@@ -1,8 +1,22 @@
 {
-  "edition": "EO",
-  "date": "01/1965",
-  "dernier_titre_4e_plat": "Les 4 As et le visiteur de minuit",
-  "depot_legal": false,
-  "isbn": false,
-  "code_barres": false
+    "id": "4as-04",
+    "serie": "4as",
+    "numero": "04",
+    "titre": "Les 4 As et le visiteur de minuit",
+
+    "editions": [
+        {
+            "type": "EO",
+            "dateEdition": "01/1965",
+            "valeurMin": 30,
+            "valeurMax": 50,
+            "criteres": [
+                "Dernier titre 4e plat : Les 4 As et le visiteur de minuit",
+                "Pas d'ISBN",
+                "46 planches"
+            ]
+        }
+    ],
+
+    "collection": []
 }
