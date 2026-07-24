@@ -114,9 +114,10 @@ for (const fichier of fichiersAlbums) {
 
         } catch (e) {
 
-            console.error(`Erreur pour ${album.id} :`, e);
+    alert(`Erreur ${album.id}\n\n${e.message}`);
+    console.error(`Erreur pour ${album.id} :`, e);
 
-        }
+}
 
     }
 
