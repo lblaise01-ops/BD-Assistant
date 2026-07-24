@@ -96,7 +96,10 @@ for (const fichier of fichiersAlbums) {
 
         try {
 
-            const rep = await fetch(`fiches/${album.serie}/${album.id}.json`);
+            const rep = await fetch(
+    `fiches/${album.serie}/${album.id}.json?v=${Date.now()}`,
+    { cache: "no-store" }
+);
 
             if (!rep.ok)
                 continue;
