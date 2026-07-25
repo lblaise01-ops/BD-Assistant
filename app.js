@@ -241,7 +241,7 @@ function afficherAlbums(serie) {
                     html += `
 <div class="edition-bloc ${possedee ? "edition-possedee" : "edition-recherchee"}">
 
-<div class="ligne-edition ${possedee ? 'possedee' : 'non-possedee'}">
+<div class="ligne-edition">
 
     <span class="badge-eo">
     ${edition.type === "EO" ? '<span class="etoile">⭐</span>&nbsp;' : ''}${edition.type}
