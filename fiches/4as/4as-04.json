@@ -8,7 +8,7 @@
         {
             "type": "EO",
             "dateEdition": "01/1965",
-            "valeurMin": 20,
+            "valeurMin": 120,
             "valeurMax": 25,
             "criteres": [
                 "Dernier titre 4e plat : Les 4 As et le visiteur de minuit",
