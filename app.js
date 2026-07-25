@@ -241,7 +241,7 @@ function afficherAlbums(serie) {
                     html += `
     <div class="edition-bloc ${possedee ? "edition-possedee" : "edition-recherchee"}">
 
-<div class="ligne-edition">
+<div class="ligne-edition ${possedee ? 'possedee' : 'non-possedee'}">
 
     <span class="badge-eo">
     ${edition.type === "EO" ? '<span class="etoile">⭐</span>&nbsp;' : ''}${edition.type}
@@ -278,7 +278,7 @@ function afficherAlbums(serie) {
 
                 });
 
-                                if (fiche.collection && fiche.collection.length > 0) {
+                                                if (fiche.collection && fiche.collection.length > 0) {
 
                     fiche.collection.forEach(ex => {
 
@@ -286,14 +286,15 @@ function afficherAlbums(serie) {
                             <div class="collection">
                                 ✓ ${ex.proprietaire} - ${ex.etat}
                             </div>
-                            ;
-                        `}
+                        `;
 
-    html += `
-        </div>
-    `;
+                    });
 
-});
+                }
+
+                html += `
+                    </div>
+                `;
 
             }
 
