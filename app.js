@@ -309,7 +309,10 @@ function afficherAlbums(serie) {
 
         bloc.innerHTML = html;
 
-        zoneContenu.appendChild(bloc);
+// Ouvre la fiche détaillée lorsqu'on clique sur un album
+bloc.onclick = () => afficherFiche(album);
+
+zoneContenu.appendChild(bloc);
 
     });
 
