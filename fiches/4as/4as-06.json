@@ -1,18 +1,22 @@
 {
-  "serie": "Les 4 As",
-  "numero": "06",
-  "titre": "Les 4 As et la Coupe d'Or",
-  "editions": [
-    {
-      "id": "EO",
-      "annee": 1968,
-      "editeur": "Casterman",
-      "type": "Edition originale",
-      "isbn": "",
-      "dernier_titre_4e_plat": "Les 4 As et la Coupe d'Or",
-      "cote_min": 20,
-      "cote_max": 25,
-      "remarques": ""
-    }
-  ]
+    "id": "4as-06",
+    "serie": "4as",
+    "numero": "06",
+    "titre": "Les 4 As et la Coupe d'Or",
+
+    "editions": [
+        {
+            "type": "EO",
+            "dateEdition": "1968",
+            "valeurMin": 20,
+            "valeurMax": 25,
+            "criteres": [
+                "Dernier titre 4e plat : Les 4 As et la Coupe d'Or",
+                "Pas d'ISBN",
+                "46 planches"
+            ]
+        }
+    ],
+
+    "collection": []
 }
