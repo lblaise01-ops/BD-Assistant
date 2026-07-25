@@ -514,7 +514,7 @@ function afficherGenerateur() {
     zoneContenu.appendChild(boutonRetour);
     zoneContenu.appendChild(titre);
 
-    afficherSeries("A");
+    // Le formulaire sera ajouté ici à l'étape suivante.
 
 }
 
