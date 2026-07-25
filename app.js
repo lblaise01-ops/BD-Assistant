@@ -249,7 +249,7 @@ function afficherAlbums(serie) {
     <div class="ligne-edition">
 
     <span class="badge-eo ${(!possedeEO && edition.type === "EO") ? "eo-manquante" : ""}">
-    <span class="etoile">⭐</span>&nbsp;${edition.type}${edition.type === "EO" ? '<span class="etoile">⭐</span>&nbsp;' : ''}${edition.type}
+    ${edition.type === "EO" ? '<span class="etoile">⭐</span>&nbsp;' : ''}${edition.type}
     </span>
 
     <span class="date-edition">
