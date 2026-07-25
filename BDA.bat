@@ -69,6 +69,19 @@ echo.
 
 echo Attente de la publication de GitHub Pages...
 echo.
+
+:ATTENTE
+
+curl -I -s https://lblaise01-ops.github.io/BD-Assistant/ | find "200 OK" >nul
+
+if errorlevel 1 (
+    timeout /t 5 >nul
+    goto ATTENTE
+)
+
+echo.
+echo GitHub Pages est disponible.
+echo.
 echo Appuie sur F5 jusqu'a ce que la nouvelle version apparaisse.
 echo Le site va s'ouvrir automatiquement.
 echo.
