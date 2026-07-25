@@ -17,7 +17,7 @@
             ]
         },
         {
-            "type": "Réédition 1972",
+            "type": "Réédition",
             "dateEdition": "1972",
             "valeurMin": 5,
             "valeurMax": 10,
@@ -30,7 +30,7 @@
 
     "collection": [
         {
-            "edition": "Réédition 1972",
+            "edition": "Réédition",
             "proprietaire": "Laurent",
             "etat": 50
         }
