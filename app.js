@@ -239,7 +239,9 @@ function afficherAlbums(serie) {
                     
 
                     html += `
-    <div class="ligne-edition">
+    <div class="edition-bloc ${possedee ? "edition-possedee" : "edition-recherchee"}">
+
+<div class="ligne-edition">
 
     <span class="badge-eo">
     ${edition.type === "EO" ? '<span class="etoile">⭐</span>&nbsp;' : ''}${edition.type}
@@ -284,11 +286,14 @@ function afficherAlbums(serie) {
                             <div class="collection">
                                 ✓ ${ex.proprietaire} - ${ex.etat}
                             </div>
-                        `;
+                            ;
+                        `}
 
-                    });
+    html += `
+        </div>
+    `;
 
-                }
+});
 
             }
 
@@ -368,7 +373,11 @@ function afficherFiche(album) {
 
         const bloc = document.createElement("div");
 
-        bloc.className = "edition";
+        const exemplaire = fiche.collection
+    ? fiche.collection.find(ex => ex.edition === edition.type)
+    : null;
+
+bloc.className = exemplaire ? "edition possedee" : "edition non-possedee";
 
         bloc.innerHTML = `
             <h3>${edition.type}</h3>
