@@ -496,7 +496,13 @@ const btnGenerateur = document.getElementById("btnGenerateur");
 
 if (btnGenerateur) {
 
-    btnGenerateur.onclick = afficherGenerateur;
+    btnGenerateur.onclick = () => {
+
+    console.log("Bouton Générateur cliqué");
+
+    afficherGenerateur();
+
+};
 
 }
 
