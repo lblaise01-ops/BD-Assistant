@@ -67,8 +67,11 @@ echo     PUBLICATION EN COURS...
 echo =====================================
 echo.
 
-echo Attente de la mise a jour de GitHub Pages...
-timeout /t 20 /nobreak >nul
+echo Attente de la publication de GitHub Pages...
+echo.
+echo Appuie sur F5 jusqu'a ce que la nouvelle version apparaisse.
+echo Le site va s'ouvrir automatiquement.
+echo.
 
 start https://lblaise01-ops.github.io/BD-Assistant/
 
