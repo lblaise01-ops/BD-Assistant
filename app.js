@@ -232,51 +232,65 @@ function afficherAlbums(serie) {
         ? fiche.collection.find(ex => ex.edition === edition.type)
         : null;
 
-    const possedee = !!exemplaire;
+    const recherchee = !exemplaire;
 
-                    console.log("Edition :", edition);
+    html += `
+        <div class="edition-bloc ${recherchee ? "edition-recherchee" : "edition-possedee"}">
 
-                    
+            <div class="ligne-edition">
 
-                    html += `
-<div class="edition-bloc ${possedee ? "edition-possedee" : "edition-recherchee"}">
+                <span class="badge-eo">
+                    ${edition.type === "EO"
+                        ? '<span class="etoile">⭐</span>&nbsp;'
+                        : ""}
+                    ${edition.type}
+                </span>
 
-<div class="ligne-edition">
+                <span class="date-edition">
+                    ${edition.dateEdition || ""}
+                </span>
 
-    <span class="badge-eo">
-    ${edition.type === "EO" ? '<span class="etoile">⭐</span>&nbsp;' : ''}${edition.type}
-</span>
-
-    <span class="date-edition">
-        ${edition.dateEdition || "Date ?"}
-    </span>
-
-    <span class="cote-edition">
-    ${
-        ("valeurMin" in edition) && ("valeurMax" in edition)
-            ? `${edition.valeurMin} - ${edition.valeurMax} €`
-            : ""
-    }
-</span>
-
-</div>
-                    `;
-
-                    if (edition.criteres && edition.criteres.length > 0) {
-
-                        edition.criteres.forEach(c => {
-
-                            html += `
-                                <div class="critere">
-                                    • ${c}
-                                </div>
-                            `;
-
-                        });
-
+                <span class="cote-edition">
+                    ${
+                        (edition.valeurMin !== undefined &&
+                         edition.valeurMax !== undefined)
+                            ? `${edition.valeurMin} - ${edition.valeurMax} €`
+                            : ""
                     }
+                </span>
 
-                });
+            </div>
+    `;
+
+    if (edition.criteres) {
+
+        edition.criteres.forEach(critere => {
+
+            html += `
+                <div class="critere">
+                    • ${critere}
+                </div>
+            `;
+
+        });
+
+    }
+
+    if (exemplaire) {
+
+        html += `
+            <div class="collection">
+                ✓ ${exemplaire.proprietaire} - ${exemplaire.etat}
+            </div>
+        `;
+
+    }
+
+    html += `
+        </div>
+    `;
+
+});
 
                                                 if (fiche.collection && fiche.collection.length > 0) {
 
