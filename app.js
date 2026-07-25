@@ -258,10 +258,7 @@ function afficherAlbums(serie) {
 
     <span class="cote-edition">
     ${
-        edition.valeurMin != null &&
-        edition.valeurMax != null &&
-        edition.valeurMin !== "" &&
-        edition.valeurMax !== ""
+        ("valeurMin" in edition) && ("valeurMax" in edition)
             ? `${edition.valeurMin} - ${edition.valeurMax} €`
             : ""
     }
