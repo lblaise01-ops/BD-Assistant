@@ -29,7 +29,16 @@ async function init() {
 
     await chargerDonnees();
 
+    afficherAccueil();
+
+}
+
+function afficherAccueil() {
+
     afficherAlphabet();
+
+    // Pour l'instant, une seule série existe.
+    afficherSeries("L");
 
 }
 
@@ -278,19 +287,43 @@ function afficherAlbums(serie) {
 
     if (exemplaire) {
 
-        html += `
-            <div class="collection">
-                ✓ ${exemplaire.proprietaire} - ${exemplaire.etat}
-            </div>
-        `;
+    let proprietaire = exemplaire.proprietaire;
+    let etat = exemplaire.etat;
 
+    if (proprietaire === "Caroline") {
+        proprietaire = `<span style="font-weight:bold;color:#6A1B9A;">Caroline</span>`;
+    }
+
+    let couleurEtat = "#000000";
+
+    switch (etat) {
+        case "TB":
+            couleurEtat = "#006064";
+            break;
+
+        case "B":
+            couleurEtat = "#2E7D32";
+            break;
+
+        case "Moyen":
+            couleurEtat = "#EF6C00";
+            break;
+
+        case "Mauvais":
+            couleurEtat = "#C62828";
+            break;
     }
 
     html += `
+        <div class="collection">
+            ✓ ${proprietaire} -
+            <span style="color:${couleurEtat};font-weight:bold;">
+                ${etat}
+            </span>
         </div>
     `;
 
-});
+}
 
 
                 html += `
@@ -345,7 +378,7 @@ function afficherFiche(album) {
     // Titre
 
     const titre = document.createElement("h2");
-    titre.textContent = `${album.numero} - ${album.titre}`;
+titre.textContent = "Nouvelle fiche";
     zoneContenu.appendChild(titre);
 
     const fiche = FICHES?.[album.serie]?.[album.id];
@@ -428,13 +461,43 @@ function afficherFiche(album) {
 
         if (exemplaire) {
 
-            html += `
-                <div class="collection">
-                    ✓ ${exemplaire.proprietaire} - ${exemplaire.etat}
-                </div>
-            `;
+    let proprietaire = exemplaire.proprietaire;
+    let etat = exemplaire.etat;
 
-        }
+    if (proprietaire === "Caroline") {
+        proprietaire = `<span style="font-weight:bold;color:#6A1B9A;">Caroline</span>`;
+    }
+
+    let couleurEtat = "#000000";
+
+    switch (etat) {
+        case "TB":
+            couleurEtat = "#006064";
+            break;
+
+        case "B":
+            couleurEtat = "#2E7D32";
+            break;
+
+        case "Moyen":
+            couleurEtat = "#EF6C00";
+            break;
+
+        case "Mauvais":
+            couleurEtat = "#C62828";
+            break;
+    }
+
+    html += `
+        <div class="collection">
+            ✓ ${proprietaire} -
+            <span style="color:${couleurEtat};font-weight:bold;">
+                ${etat}
+            </span>
+        </div>
+    `;
+
+}
 
         bloc.innerHTML = html;
 
@@ -478,15 +541,6 @@ function ficheExiste(album) {
 // Générateur de fiches
 // ==========================================
 
-document.getElementById("btnGenerateur").onclick = () => {
-
-    zoneContenu.innerHTML = `
-        <h2>Générateur de fiches</h2>
-
-        <p>Module en cours de développement.</p>
-    `;
-
-};
 
 // ==========================================
 // Générateur de fiches
@@ -512,7 +566,13 @@ function afficherGenerateur() {
 
     const boutonRetour = document.createElement("button");
     boutonRetour.textContent = "← Retour";
-    boutonRetour.onclick = () => afficherAlphabet();
+    boutonRetour.onclick = () => {
+
+    console.log("Retour cliqué");
+
+    afficherAccueil();
+
+};
 
     const titre = document.createElement("h2");
     titre.textContent = "Générateur de fiches";
@@ -520,7 +580,52 @@ function afficherGenerateur() {
     zoneContenu.appendChild(boutonRetour);
     zoneContenu.appendChild(titre);
 
-    // Le formulaire sera ajouté ici à l'étape suivante.
+        const formulaire = document.createElement("div");
+
+    formulaire.innerHTML = `
+
+        <h3>Identification</h3>
+
+        <p>
+            Série<br>
+            <input type="text" id="ficheSerie">
+        </p>
+
+        <p>
+            Numéro<br>
+            <input type="text" id="ficheNumero">
+        </p>
+
+        <p>
+            Titre<br>
+            <input type="text" id="ficheTitre" style="width:100%;">
+        </p>
+
+        <hr>
+
+        <h3>Éditions</h3>
+
+        <button type="button" id="btnAjouterEdition">
+            + Ajouter une édition
+        </button>
+
+        <hr>
+
+        <h3>Collection</h3>
+
+        <button type="button" id="btnAjouterExemplaire">
+            + Ajouter un exemplaire
+        </button>
+
+        <hr>
+
+        <button type="button" id="btnGenererJson">
+            Générer le JSON
+        </button>
+
+    `;
+
+    zoneContenu.appendChild(formulaire);
 
 }
 
