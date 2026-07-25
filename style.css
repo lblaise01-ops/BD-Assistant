@@ -179,11 +179,11 @@ header{
 
     border-radius:20px;
 
-    background:#f3f3f3;
-
     font-weight:bold;
 
     margin-right:10px;
+
+    background:inherit;
 
 }
 
