@@ -226,33 +226,24 @@ function afficherAlbums(serie) {
 
             } else {
 
-                const possedeEO =
-                    fiche.collection &&
-                    fiche.collection.some(ex => ex.edition.startsWith("EO"));
-
                 fiche.editions.forEach(edition => {
+
+    const exemplaire = fiche.collection
+        ? fiche.collection.find(ex => ex.edition === edition.type)
+        : null;
+
+    const possedee = !!exemplaire;
 
                     console.log("Edition :", edition);
 
-                    // Les rééditions ne s'affichent que si elles sont dans la collection
-                    if (edition.type !== "EO") {
-
-                        const possedeEdition =
-                            fiche.collection &&
-                            fiche.collection.some(ex => ex.edition.startsWith(edition.type));
-
-                        if (!possedeEdition) {
-                            return;
-                        }
-
-                    }
+                    
 
                     html += `
     <div class="ligne-edition">
 
-    <span class="badge-eo ${(!possedeEO && edition.type === "EO") ? "eo-manquante" : ""}">
+    <span class="badge-eo">
     ${edition.type === "EO" ? '<span class="etoile">⭐</span>&nbsp;' : ''}${edition.type}
-    </span>
+</span>
 
     <span class="date-edition">
         ${edition.dateEdition || "Date ?"}
@@ -291,9 +282,7 @@ function afficherAlbums(serie) {
 
                         html += `
                             <div class="collection">
-                                ✓ ${ex.edition}
-                                - ${ex.proprietaire}
-                                - ${ex.etat} %
+                                ✓ ${ex.proprietaire} - ${ex.etat}
                             </div>
                         `;
 
