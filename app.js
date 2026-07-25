@@ -474,4 +474,52 @@ function ficheExiste(album) {
 // Version
 // ==========================================
 
+// ==========================================
+// Générateur de fiches
+// ==========================================
+
+document.getElementById("btnGenerateur").onclick = () => {
+
+    zoneContenu.innerHTML = `
+        <h2>Générateur de fiches</h2>
+
+        <p>Module en cours de développement.</p>
+    `;
+
+};
+
+// ==========================================
+// Générateur de fiches
+// ==========================================
+
+const btnGenerateur = document.getElementById("btnGenerateur");
+
+if (btnGenerateur) {
+
+    btnGenerateur.onclick = afficherGenerateur;
+
+}
+
+function afficherGenerateur() {
+
+    zoneContenu.innerHTML = "";
+
+    const boutonRetour = document.createElement("button");
+    boutonRetour.textContent = "← Retour";
+    boutonRetour.onclick = () => afficherAlphabet();
+
+    const titre = document.createElement("h2");
+    titre.textContent = "Générateur de fiches";
+
+    zoneContenu.appendChild(boutonRetour);
+    zoneContenu.appendChild(titre);
+
+    afficherSeries("A");
+
+}
+
+// ==========================================
+// Version
+// ==========================================
+
 console.log("BD Assistant V0.07 chargé");
