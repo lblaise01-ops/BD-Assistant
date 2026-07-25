@@ -342,14 +342,13 @@ function afficherFiche(album) {
 
     zoneContenu.innerHTML = "";
 
-    // Bouton retour
+    // Retour
     const retour = document.createElement("button");
     retour.textContent = "← Retour";
 
     retour.onclick = () => {
 
         const serie = SERIES_DATA.find(s => s.id === album.serie);
-
         afficherAlbums(serie);
 
     };
@@ -357,73 +356,96 @@ function afficherFiche(album) {
     zoneContenu.appendChild(retour);
 
     // Titre
+
     const titre = document.createElement("h2");
-
-    titre.textContent = album.numero + " - " + album.titre;
-
+    titre.textContent = `${album.numero} - ${album.titre}`;
     zoneContenu.appendChild(titre);
 
-    // Recherche de la fiche
-    const serieFiches = FICHES[album.serie];
+    const fiche = FICHES?.[album.serie]?.[album.id];
 
-    if (!serieFiches || !serieFiches[album.id]) {
+    if (!fiche) {
 
-        const info = document.createElement("p");
-
-        info.innerHTML = "<b>Fiche en cours de création</b>";
-
-        zoneContenu.appendChild(info);
+        zoneContenu.innerHTML += `
+            <p><b>Fiche en cours de création</b></p>
+        `;
 
         return;
 
     }
 
-    const fiche = serieFiches[album.id];
-
-    // ============================
-    // Editions
-    // ============================
-
     fiche.editions.forEach(edition => {
+
+        const exemplaire = fiche.collection
+            ? fiche.collection.find(ex => ex.edition === edition.type)
+            : null;
+
+        const recherchee = !exemplaire;
 
         const bloc = document.createElement("div");
 
-        const exemplaire = fiche.collection
-    ? fiche.collection.find(ex => ex.edition === edition.type)
-    : null;
+        bloc.className =
+            `edition-bloc ${recherchee ? "edition-recherchee" : "edition-possedee"}`;
 
-bloc.className = exemplaire ? "edition possedee" : "edition non-possedee";
+        let html = `
 
-        bloc.innerHTML = `
-            <h3>${edition.type}</h3>
+            <div class="ligne-edition">
 
-            <p>
-                <b>Date :</b> ${edition.dateEdition || "-"}<br>
-                <b>Dépôt légal :</b> ${edition.depotLegal || "-"}<br>
-                <b>ISBN :</b> ${edition.isbn || "-"}<br>
-                <b>Cote :</b> ${edition.valeurMin} € à ${edition.valeurMax} €
-            </p>
+                <span class="badge-eo">
+
+                    ${edition.type === "EO"
+                        ? '<span class="etoile">⭐</span>&nbsp;'
+                        : ""}
+
+                    ${edition.type}
+
+                </span>
+
+                <span class="date-edition">
+
+                    ${edition.dateEdition || ""}
+
+                </span>
+
+                <span class="cote-edition">
+
+                    ${(edition.valeurMin !== undefined &&
+                      edition.valeurMax !== undefined)
+
+                        ? `${edition.valeurMin} - ${edition.valeurMax} €`
+
+                        : ""}
+
+                </span>
+
+            </div>
+
         `;
 
-        // Critères
-
-        if (edition.criteres && edition.criteres.length > 0) {
-
-            const ul = document.createElement("ul");
+        if (edition.criteres) {
 
             edition.criteres.forEach(critere => {
 
-                const li = document.createElement("li");
-
-                li.textContent = critere;
-
-                ul.appendChild(li);
+                html += `
+                    <div class="critere">
+                        • ${critere}
+                    </div>
+                `;
 
             });
 
-            bloc.appendChild(ul);
+        }
+
+        if (exemplaire) {
+
+            html += `
+                <div class="collection">
+                    ✓ ${exemplaire.proprietaire} - ${exemplaire.etat}
+                </div>
+            `;
 
         }
+
+        bloc.innerHTML = html;
 
         zoneContenu.appendChild(bloc);
 
