@@ -1,0 +1,22 @@
+{
+    "id": "4as-08",
+    "serie": "4as",
+    "numero": "08",
+    "titre": "Les 4 As et le Fantôme",
+
+    "editions": [
+        {
+            "type": "EO",
+            "dateEdition": "1969",
+            "valeurMin": 20,
+            "valeurMax": 25,
+            "criteres": [
+                "Dernier titre 4e plat : Les 4 As et le Dragon des neiges",
+                "Pas d'ISBN",
+                "46 planches"
+            ]
+        }
+    ],
+
+    "collection": []
+}

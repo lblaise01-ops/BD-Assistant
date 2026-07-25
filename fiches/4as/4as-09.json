@@ -1,0 +1,38 @@
+{
+    "id": "4as-09",
+    "serie": "4as",
+    "numero": "09",
+    "titre": "Les 4 As et le Rallye olympique",
+
+    "editions": [
+        {
+            "type": "EO",
+            "dateEdition": "1969",
+            "valeurMin": 20,
+            "valeurMax": 25,
+            "criteres": [
+                "Dernier titre 4e plat : Les 4 As et le Rallye olympique",
+                "Pas d'ISBN",
+                "46 planches"
+            ]
+        },
+        {
+            "type": "Réédition 1972",
+            "dateEdition": "1972",
+            "valeurMin": 5,
+            "valeurMax": 10,
+            "criteres": [
+                "Avec ISBN",
+                "46 planches"
+            ]
+        }
+    ],
+
+    "collection": [
+        {
+            "edition": "Réédition 1972",
+            "proprietaire": "Laurent",
+            "etat": 50
+        }
+    ]
+}
