@@ -239,7 +239,7 @@ function afficherAlbums(serie) {
                     
 
                     html += `
-    <div class="edition-bloc ${possedee ? "edition-recherchee" : "edition-possedee"}">
+<div class="edition-bloc ${possedee ? "edition-possedee" : "edition-recherchee"}">
 
 <div class="ligne-edition ${possedee ? 'possedee' : 'non-possedee'}">
 
