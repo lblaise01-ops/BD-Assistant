@@ -292,19 +292,6 @@ function afficherAlbums(serie) {
 
 });
 
-                                                if (fiche.collection && fiche.collection.length > 0) {
-
-                    fiche.collection.forEach(ex => {
-
-                        html += `
-                            <div class="collection">
-                                ✓ ${ex.proprietaire} - ${ex.etat}
-                            </div>
-                        `;
-
-                    });
-
-                }
 
                 html += `
                     </div>
