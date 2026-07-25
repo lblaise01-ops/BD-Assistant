@@ -349,6 +349,10 @@ function afficherFiche(album) {
     zoneContenu.appendChild(titre);
 
     const fiche = FICHES?.[album.serie]?.[album.id];
+    console.log("Album :", album.id);
+    console.log("Fiche :", fiche);
+    console.log("Collection :", fiche?.collection);
+    console.log("Editions :", fiche?.editions);
 
     if (!fiche) {
 
