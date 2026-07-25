@@ -19,8 +19,6 @@
         {
             "type": "Réédition",
             "dateEdition": "1972",
-            "valeurMin": 5,
-            "valeurMax": 10,
             "criteres": [
                 "Avec ISBN",
                 "46 planches"
@@ -32,7 +30,7 @@
         {
             "edition": "Réédition",
             "proprietaire": "Laurent",
-            "etat": 50
+            "etat": "Moyen"
         }
     ]
 }
