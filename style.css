@@ -112,11 +112,25 @@ header{
 
     border-left:4px solid #3498db;
 
-    padding-left:10px;
+    padding:12px;
 
     margin-top:8px;
 
-    margin-bottom:8px;
+    margin-bottom:12px;
+
+    border-radius:8px;
+
+}
+
+.edition.possedee{
+
+    background:#dff5df;
+
+}
+
+.edition.non-possedee{
+
+    background:#efefef;
 
 }
 
