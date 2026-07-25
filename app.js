@@ -232,6 +232,8 @@ function afficherAlbums(serie) {
 
                 fiche.editions.forEach(edition => {
 
+                    console.log("Edition :", edition);
+
                     // Les rééditions ne s'affichent que si elles sont dans la collection
                     if (edition.type !== "EO") {
 
